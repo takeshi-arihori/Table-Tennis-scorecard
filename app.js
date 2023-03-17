@@ -40,7 +40,7 @@ p2Btn.addEventListener('click', () => {
   }
 });
 
-winningScoreSelect.addEventListener('change', function() {
+winningScoreSelect.addEventListener('change', function () {
   // thisを使用する為,無名関数で記述
   winningScore = parseInt(this.value);
   reset();
@@ -48,7 +48,7 @@ winningScoreSelect.addEventListener('change', function() {
 
 resetBtn.addEventListener('click', reset);
 
-function reset(){
+function reset() {
   isGameOver = false;
   p1Score = 0;
   p2Score = 0;
