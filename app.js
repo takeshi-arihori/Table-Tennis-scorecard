@@ -8,6 +8,8 @@ const p1Display = document.querySelector('#p1Display');
 const p2Display = document.querySelector('#p2Display');
 // reset button
 const resetBtn = document.querySelector('#reset');
+// select
+const winningScoreSelect = document.querySelector('#winningScore');
 
 let p1Score = 0;
 let p2Score = 0;
@@ -20,6 +22,8 @@ p1Btn.addEventListener('click', () => {
     p1Display.innerHTML = p1Score;
     if (p1Score === winningScore) {
       isGameOver = true;
+      p1Display.classList.add('winner');
+      p2Display.classList.add('loser');
     }
   }
 });
@@ -30,6 +34,26 @@ p2Btn.addEventListener('click', () => {
     p2Display.innerHTML = p2Score;
     if (p2Score === winningScore) {
       isGameOver = true;
+      p1Display.classList.add('loser');
+      p2Display.classList.add('winner');
     }
   }
 });
+
+winningScoreSelect.addEventListener('change', function() {
+  // thisを使用する為,無名関数で記述
+  winningScore = parseInt(this.value);
+  reset();
+});
+
+resetBtn.addEventListener('click', reset);
+
+function reset(){
+  isGameOver = false;
+  p1Score = 0;
+  p2Score = 0;
+  p1Display.innerHTML = p1Score;
+  p2Display.innerHTML = p2Score;
+  p1Display.classList.remove('winner', 'loser');
+  p2Display.classList.remove('winner', 'loser');
+}

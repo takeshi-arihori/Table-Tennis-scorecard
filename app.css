@@ -1,4 +1,9 @@
 @charset 'utf-8';
-body {
 
+.winner{
+  color: green;
+}
+
+.loser{
+  color: red;
 }
