@@ -13,10 +13,11 @@ const winningScoreSelect = document.querySelector('#winningScore');
 
 let p1Score = 0;
 let p2Score = 0;
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
-p1Btn.addEventListener('click', () => {
+p1Btn.addEventListener('click', (e) => {
+  e.preventDefault();
   if (!isGameOver) {
     p1Score++;
     p1Display.innerHTML = p1Score;
@@ -30,7 +31,8 @@ p1Btn.addEventListener('click', () => {
   }
 });
 
-p2Btn.addEventListener('click', () => {
+p2Btn.addEventListener('click', (e) => {
+  e.preventDefault();
   if (!isGameOver) {
     p2Score++;
     p2Display.innerHTML = p2Score;
